@@ -1,6 +1,6 @@
 ## About
 
-A discord bot that acts as a ranked system for games. It calculates and keeps track of player ratings within the server. It stores the database on the discord server itself via chat messages.
+A discord bot that acts as a ranked system for games. It calculates and keeps track of player ratings within the server. It stores the database on the discord server itself via messages in two isolated channels.
 
 Made for the FFC / SSF2 community; descendant of Boingbot.
 
@@ -14,7 +14,7 @@ npm install discord.js @discordjs/rest discord-api-types discordjs/builders dote
 
 ### .env
 
-You must create a .env file at the root directory with the following format and fill it with the appropraite credentials:
+You must create a .env file at the root directory with the following format and fill it with the appropriate credentials:
 
 ```
 # Bot
@@ -30,7 +30,7 @@ SAVEPOINT_DB_CHANNEL_ID =    # The text channel ID for savepoints.
 
 GAMES_DB_CHANNEL and SAVEPOINT_DB_CHANNEL must be empty text channels that no one else uses; because the bot uses it to read/write match results and user profile data.
 
-(See https://discord.com/developers/docs/getting-started for more info, specifically the "Adding credentials" section)
+(See https://discord.com/developers/docs/getting-started for info on where to find credentials, specifically the "Adding credentials" section)
 
 ## How to use
 
@@ -52,11 +52,11 @@ node main.js
 ## About the code
 
 ### Take a look at
--events/ready.js - This is when the bot logs into the discord server, and starts loading the database by reading the GAMES_DB_CHANNEL and SAVEPOINT_DB_CHANNEL>
--commands/ - This is where commands are handled by the bot, each command is handled in its own file.
--core/ranked.js - This file stored all the ranked-related functions and constants.
+- events/ready.js - This is when the bot logs into the discord server, and starts loading the database by reading the GAMES_DB_CHANNEL and SAVEPOINT_DB_CHANNEL>
+- commands/ - This is where commands are handled by the bot, each command is handled in its own file.
+- core/ranked.js - This file stored all the ranked-related functions and constants.
 
 ### Not that important
--deploy-commands.js - Updates slash commands onto the server.
--main.js - Loads project dependencies and logs onto discord. Calls events/ready.js when it's logged in.
--events/interactionCreate.js - A setup script that responds to slash commands, and calls the corresponding .js file
+- deploy-commands.js - Updates slash commands onto the server.
+- main.js - Loads project dependencies and logs onto discord. Calls events/ready.js when it's logged in.
+- events/interactionCreate.js - A setup script that responds to slash commands, and calls the corresponding .js file
