@@ -52,7 +52,7 @@ node main.js
 ## About the code
 
 ### Take a look at
-- events/ready.js - This is when the bot logs into the discord server, and starts loading the database by reading the GAMES_DB_CHANNEL and SAVEPOINT_DB_CHANNEL>
+- events/ready.js - This is when the bot logs into the discord server, and starts loading the database by reading the GAMES_DB_CHANNEL and SAVEPOINT_DB_CHANNEL
 - commands/ - This is where commands are handled by the bot, each command is handled in its own file.
 - core/ranked.js - This file stored all the ranked-related functions and constants.
 
