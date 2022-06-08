@@ -73,7 +73,7 @@ module.exports = {
             winner_old_rating = parseInt(winner_profile.rating);
         }
         if (loser_profile != undefined) {
-            loser_profile = parseInt(loser_profile.rating);
+            loser_old_rating = parseInt(loser_profile.rating);
         }
       
         var rating_results = ranked.process_match(profiles, raw_results)
@@ -92,7 +92,7 @@ module.exports = {
         // Responses
         const report_response = `${log_message}`
             + `\n\n\t${winner_username} (+${winner_rating_change}), ${winner_old_rating} -> ${winner_rating}`
-            + `\n\t${loser_username} (+${loser_rating_change}), ${loser_old_rating} -> ${loser_rating}`
+            + `\n\t${loser_username} (${loser_rating_change}), ${loser_old_rating} -> ${loser_rating}`
             + `\n\n(If you made a mistake, delete the corresponding log in the ${games_channel} channel)`
 
         // Finally, send responses

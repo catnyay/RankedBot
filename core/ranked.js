@@ -69,9 +69,9 @@ exports.calculate_new_ratings = function(wor, lor, wsco, lsco) {
 
 exports.get_rank = function (rating) {
     var rank_names
-        = ["Bronze", "Silver" , "Gold", "Diamond", "Platinum", "Masters", "Grandmasters"]
+        = ["Iron", "Bronze", "Silver", "Gold" ,"Platinum", "Diamond"]
     var rank_thresholds
-        = [-999999, 1400, 1600, 1800, 2000, 2200]
+        = [-999999, 1350, 1700, 2800, 4000, 5000]
     rating = parseInt(rating)
 
     for (let i = 0; i < rank_thresholds.length; i++) {
