@@ -33,25 +33,12 @@ module.exports = {
         const w_score = interaction.options.getInteger('winner_score')
         const l_score = interaction.options.getInteger('loser_score')
 
-        // Responses
-        const semi_raw_results = `(${winner.tag} > ${loser.tag}, ${w_score}-${l_score})`
-
-        //// Check for basic errors
-        if (winner == loser) {
-            await interaction.reply(`Invalid report - the winner and loser cannot be the same. ${semi_raw_results}`);
+        // Check for input errors
+        const error_result = `(You reported \"${winner.tag} defeated ${loser.tag} ${w_score}-${l_score}\")`
+        if (check_for_input_errors(error_result))
             return
-        } else if (l_score > w_score) {
-            await interaction.reply(`Invalid report - the loser can't have won more games than the winner. ${semi_raw_results}`);
-            return
-        } else if (l_score == w_score) {
-            await interaction.reply(`Invalid report - one player must have a higher game count than the other. ${semi_raw_results}`);
-            return
-        } else if (l_score < 0 || w_score < 0){
-            await interaction.reply(`Invalid report - you can't have a negative game count. ${semi_raw_results}`);
-            return
-        }
         
-        //// Report is valid; process and log it.
+        // Report is valid; process and log it.
         const game_id = parseInt(ranked.last_game_id) + 1
         const savepoint_id = parseInt(ranked.last_savepoint_id)
 
@@ -101,3 +88,19 @@ module.exports = {
 		await interaction.reply(report_response);
 	},
 };
+
+function check_for_input_errors(error_message) {
+    if (winner == loser) {
+        await interaction.reply(`Invalid report - the winner and loser cannot be the same. ${semi_raw_results}`);
+        return
+    } else if (l_score > w_score) {
+        await interaction.reply(`Invalid report - the loser can't have won more games than the winner. ${semi_raw_results}`);
+        return
+    } else if (l_score == w_score) {
+        await interaction.reply(`Invalid report - one player must have a higher game count than the other. ${semi_raw_results}`);
+        return
+    } else if (l_score < 0 || w_score < 0){
+        await interaction.reply(`Invalid report - you can't have a negative game count. ${semi_raw_results}`);
+        return
+    }
+}
