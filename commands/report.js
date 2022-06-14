@@ -89,7 +89,7 @@ module.exports = {
 	},
 };
 
-function check_for_input_errors(error_message) {
+async function check_for_input_errors(error_message) {
     if (winner == loser) {
         await interaction.reply(`Invalid report - the winner and loser cannot be the same. ${semi_raw_results}`);
         return

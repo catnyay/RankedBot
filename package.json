@@ -4,6 +4,29 @@
     "@discordjs/rest": "^0.4.1",
     "discord-api-types": "^0.32.1",
     "discord.js": "^13.6.0",
-    "dotenv": "^16.0.1"
-  }
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "node": "^16.10.0"
+  },
+  "name": "RankedBot-test-with-repl-",
+  "description": "A discord bot that acts as a ranked system for any game. It calculates and keeps track of player ratings within the server. It stores the database on the discord server itself via messages in two isolated channels.",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "node": "^16.14.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thekee04/RankedBot-test-with-repl-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thekee04/RankedBot-test-with-repl-/issues"
+  },
+  "homepage": "https://github.com/thekee04/RankedBot-test-with-repl-#readme"
 }

@@ -3,13 +3,20 @@
 //	*Make sure that "deploy-commands.js" has been run at least once before running this.
 // After logging into Discord, it finishes loading the Ranked database at "events/ready.js".
 
+// Check the version of node
+console.log('Node.js', process.version)
+
 // Dependencies
 require('dotenv').config();
 const fs = require('node:fs');
 const { Client, Collection, Intents } = require('discord.js');
+const keep_alive = require('./keepalive.js')
 
 // Setup client 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+// Update commands
+const setup = require('./deploy-commands.js')
 
 // Load commands
 console.log('[Init/Main]: Loading command files.')
@@ -41,5 +48,6 @@ console.log('[Init/Main]: Loading core files.')
 client.ranked = require(`./core/ranked.js`)
 
 // Finally, login
+keep_alive()
 console.log('[Init/Main]: Logging in...')
 client.login(process.env.DISCORD_TOKEN);
