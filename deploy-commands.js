@@ -8,12 +8,6 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 
-// Creates a text file
-fs.writeFile('newfile.txt', '', function (err) {
-  if (err) throw err;
-  console.log('File is created successfully.');
-});
-
 // Load commands
 const commands = []
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));

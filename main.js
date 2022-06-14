@@ -48,6 +48,7 @@ console.log('[Init/Main]: Loading core files.')
 client.ranked = require(`./core/ranked.js`)
 
 // Finally, login
-keep_alive()
-console.log('[Init/Main]: Logging in...')
+keep_alive();
+console.log('[Init/Main]: Logging in...');
+client.on('debug', console.log);
 client.login(process.env.DISCORD_TOKEN);
