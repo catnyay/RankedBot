@@ -8,6 +8,6 @@ module.exports = {
 
 		var user = interaction.user
 
-		await interaction.reply(`Visit our page!\nPage (to be updated soon :eyes:): https://RankBot.thekee2004.repl.co\nUptime: https://stats.uptimerobot.com/JXQ2AsBVL1`);
+		await interaction.reply(`Visit our page!\nPage (to be updated soon :eyes:): https://RankBot.thekee2004.repl.co/\nUptime: https://stats.uptimerobot.com/JXQ2AsBVL1`);
 	},
 };
